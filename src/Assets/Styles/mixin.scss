@@ -8,7 +8,15 @@
   font-size: $fontSize;
 }
 
-@mixin letterSpacing() {
-  letter-spacing: 2px;
-  line-height: 40px;
+@mixin spacingHeight($letterSpacing, $lineHeight) {
+  letter-spacing: $letterSpacing;
+  line-height: $lineHeight;
+}
+
+@mixin stopDrag {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
 }

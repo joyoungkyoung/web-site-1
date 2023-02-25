@@ -12,7 +12,7 @@
     flex-direction: column;
     span > a {
       text-decoration: none;
-      @include letterSpacing;
+      @include spacingHeight(2px, 40px);
       @include fontStyle(20px, 600);
       &:hover {
         text-decoration: underline;
@@ -23,7 +23,7 @@
     width: $piece-width;
     div,
     strong {
-      @include letterSpacing;
+      @include spacingHeight(2px, 40px);
       @include fontStyle(15px, 400);
     }
     > strong {
@@ -37,7 +37,7 @@
       strong {
         display: inline-block;
         width: 25%;
-        @include letterSpacing;
+        @include spacingHeight(2px, 40px);
         @include fontStyle(15px, 700);
       }
       .link {
@@ -47,7 +47,7 @@
 
           text-decoration: none;
           vertical-align: middle;
-          @include letterSpacing;
+          @include spacingHeight(2px, 40px);
           @include fontStyle(15px, 400);
           &:hover {
             text-decoration: underline;
@@ -62,7 +62,7 @@
         word-break: keep-all;
         box-sizing: border-box;
         vertical-align: text-top;
-        line-height: 25px;
+        @include spacingHeight(0px, 25px);
         @include fontStyle(15px, 400);
       }
     }
@@ -71,14 +71,14 @@
     width: $piece-width;
     a {
       text-decoration: none;
-      @include letterSpacing;
+      @include spacingHeight(2px, 40px);
       @include fontStyle(15px, 400);
       &:hover {
         text-decoration: underline;
       }
     }
     div {
-      @include letterSpacing;
+      @include spacingHeight(2px, 40px);
       @include fontStyle(15px, 400);
     }
   }

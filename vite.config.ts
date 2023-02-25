@@ -9,6 +9,7 @@ export default defineConfig({
       '@Assets': '/src/Assets',
       '@Pages': '/src/Pages',
       '@Components': '/src/Components',
+      '@Hooks': '/src/Hooks',
     },
   },
   plugins: [react(), tsconfigPaths()],

@@ -1,3 +1,149 @@
 .home-container {
   @include defaultContentMargin;
+  .commercial {
+    position: relative;
+    width: 83.333%;
+    margin: 0 auto;
+
+    .cm-switch {
+      height: 370px;
+      .switchs {
+        position: relative;
+        padding-top: 130px;
+        .switch {
+          display: flex;
+          height: 35px;
+          cursor: pointer;
+          &.active {
+            i {
+              &::before {
+                width: 20px;
+                background-color: $text-color;
+              }
+            }
+            span {
+              align-self: center;
+              @include fontStyle(18px, 700);
+            }
+          }
+          i {
+            position: relative;
+            width: 30px;
+            &::before {
+              content: '';
+              position: absolute;
+              top: 14.5px;
+              left: 0;
+              width: 10px;
+              height: 3px;
+              background-color: #999;
+              transition: 0.2s;
+            }
+          }
+          span {
+            letter-spacing: 1px;
+            @include fontStyle(18px, 300);
+          }
+        }
+      }
+    }
+    .cm-carousel {
+      position: relative;
+      .carousel-stage-outer {
+        overflow: hidden;
+        transition: 0.2s ease;
+        .carousel-stage {
+          display: flex;
+          transition: all 0.5s ease 0s;
+          img {
+            height: 600px;
+            object-fit: cover;
+            @include stopDrag;
+          }
+          &.grap {
+            cursor: grab;
+          }
+        }
+      }
+      .carousel-nav {
+        display: flex;
+        position: absolute;
+        right: 10%;
+        top: -40px;
+        .nav {
+          position: relative;
+          width: 80px;
+          height: 80px;
+          background-color: $text-color;
+          cursor: pointer;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: calc(50% - 12px);
+            box-sizing: border-box;
+            width: 24px;
+            height: 24px;
+            border-top: #ffffff solid 2px;
+            border-right: #ffffff solid 2px;
+            border-radius: 2px;
+            transition: 0.2s;
+          }
+          &:hover {
+            &::before {
+              border-top: #999 solid 2px;
+              border-right: #999 solid 2px;
+            }
+          }
+
+          &.prev {
+            &::before {
+              left: calc(50% - 8px);
+              transform: rotate(225deg);
+            }
+          }
+          &.next {
+            &::before {
+              left: calc(50% - 16px);
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+    .cm-text {
+      position: absolute;
+      left: 20%;
+      top: 120px;
+      z-index: 1;
+      pointer-events: none;
+      word-wrap: normal;
+      word-break: keep-all;
+      .title {
+        display: flex;
+        flex-direction: column;
+        @include spacingHeight(-3px, 100px);
+        margin-bottom: 60px;
+        span {
+          @include fontStyle(80px, 200);
+          white-space: nowrap;
+        }
+        strong {
+          @include fontStyle(80px, 800);
+        }
+      }
+      .desc {
+        display: flex;
+        flex-direction: column;
+        @include spacingHeight(-1px, 30px);
+        strong {
+          @include fontStyle(18px, 700);
+          margin-bottom: 20px;
+        }
+        span {
+          @include fontStyle(18px, 300);
+        }
+      }
+    }
+  }
 }

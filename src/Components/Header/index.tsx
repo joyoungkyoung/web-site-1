@@ -24,8 +24,8 @@ const Header = () => {
 
   return (
     <div ref={headerRef} className="header">
-      <Link to={RoutesString.Home}>
-        <img className="logo" />
+      <Link to={RoutesString.Home} className="logo">
+        <div />
       </Link>
       <div className="menu-wrapper">
         {MENUS.map((item) => (

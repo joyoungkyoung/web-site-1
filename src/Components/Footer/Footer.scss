@@ -1,0 +1,85 @@
+.footer {
+  display: flex;
+  padding: 60px 8.333%;
+  height: 120px;
+  min-width: 320px;
+  border-top: $border-color solid 1px;
+
+  $piece-width: calc((100%) / 5);
+  .footer-sns {
+    width: $piece-width;
+    display: flex;
+    flex-direction: column;
+    span > a {
+      text-decoration: none;
+      @include letterSpacing;
+      @include fontStyle(20px, 600);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .footer-copyright {
+    width: $piece-width;
+    div,
+    strong {
+      @include letterSpacing;
+      @include fontStyle(15px, 400);
+    }
+    > strong {
+      @include fontStyle(15px, 700);
+    }
+  }
+  .footer-contact {
+    width: calc($piece-width * 2);
+    .contact-row {
+      width: 100%;
+      strong {
+        display: inline-block;
+        width: 25%;
+        @include letterSpacing;
+        @include fontStyle(15px, 700);
+      }
+      .link {
+        width: 75%;
+        > a {
+          display: inline-block;
+
+          text-decoration: none;
+          vertical-align: middle;
+          @include letterSpacing;
+          @include fontStyle(15px, 400);
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      .address {
+        display: inline-block;
+        width: 75%;
+        flex: 3;
+        padding-right: 50px;
+        word-break: keep-all;
+        box-sizing: border-box;
+        vertical-align: text-top;
+        line-height: 25px;
+        @include fontStyle(15px, 400);
+      }
+    }
+  }
+  .footer-terms {
+    width: $piece-width;
+    a {
+      text-decoration: none;
+      @include letterSpacing;
+      @include fontStyle(15px, 400);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    div {
+      @include letterSpacing;
+      @include fontStyle(15px, 400);
+    }
+  }
+}

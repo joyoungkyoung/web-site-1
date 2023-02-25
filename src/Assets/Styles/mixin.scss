@@ -1,5 +1,14 @@
+@mixin defaultContentMargin {
+  margin-top: 140px;
+}
+
 @mixin fontStyle($fontSize, $fontWeight) {
-  font-family: Pretendard;
+  color: $text-color;
   font-weight: $fontWeight;
   font-size: $fontSize;
+}
+
+@mixin letterSpacing() {
+  letter-spacing: 2px;
+  line-height: 40px;
 }

@@ -1,0 +1,5 @@
+@mixin fontStyle($fontSize, $fontWeight) {
+  font-family: Pretendard;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+}

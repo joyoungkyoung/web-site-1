@@ -1,7 +1,8 @@
+import RoutesWrapper from '@Pages/Routes/RoutesWrapper';
 import React from 'react';
 
 function App() {
-  return <div>start</div>;
+  return <RoutesWrapper />;
 }
 
 export default App;

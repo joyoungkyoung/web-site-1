@@ -1,8 +1,9 @@
 .home-container {
   @include defaultContentMargin;
+  $wrap-width: 83.333%;
   .commercial {
     position: relative;
-    width: 83.333%;
+    width: $wrap-width;
     margin: 0 auto;
 
     .cm-switch {
@@ -10,6 +11,7 @@
       .switchs {
         position: relative;
         padding-top: 130px;
+        width: 60px;
         .switch {
           display: flex;
           height: 35px;
@@ -143,6 +145,84 @@
         span {
           @include fontStyle(18px, 300);
         }
+      }
+    }
+  }
+
+  .about {
+    display: flex;
+    justify-content: space-between;
+    width: $wrap-width;
+    padding-top: 200px;
+    margin: 120px 10% 0 10%;
+    opacity: 0;
+    transform: translate3d(0, 100px, 0);
+    transition: 0.4s;
+    &.on {
+      opacity: 1;
+      transform: translateZ(0);
+    }
+    .about-text {
+      .top {
+        margin-bottom: 20px;
+        @include fontStyle(16px, 700);
+        @include spacingHeight(4px, 30px);
+      }
+      .title {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 60px;
+        strong {
+          @include fontStyle(70px, 700);
+          @include spacingHeight(-3px, 80px);
+        }
+      }
+      .desc {
+        display: flex;
+        flex-direction: column;
+        span {
+          @include fontStyle(18px, 400);
+          @include spacingHeight(-1px, 30px);
+        }
+      }
+      .btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 180px;
+        height: 60px;
+        margin-top: 97px;
+        background-color: $text-color;
+        @include fontStyle(20px, 700);
+        @include spacingHeight(0px, 60px);
+        color: #ffffff;
+        transition: 0.2s;
+        padding-left: 30px;
+        cursor: pointer;
+        box-sizing: border-box;
+        border: 1px solid $text-color;
+        text-decoration: none;
+        &::after {
+          content: '';
+          position: absolute;
+          right: 30px;
+          width: 40px;
+          height: 3px;
+          background-color: #ffffff;
+        }
+        &:hover {
+          background-color: #ffffff;
+          color: $text-color;
+          &::after {
+            background-color: $text-color;
+          }
+        }
+      }
+    }
+    .about-img {
+      > img {
+        max-width: 500px;
+        width: 100%;
       }
     }
   }

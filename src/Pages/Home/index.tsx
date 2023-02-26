@@ -4,6 +4,7 @@ import Commercial from './Commercial';
 import TextAnimation from './TextAnimation';
 import './Home.scss';
 import Brand from './Brand';
+import Contact from './Contact';
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
       <About />
       <TextAnimation />
       <Brand />
-      <div>contact</div>
+      <Contact />
     </div>
   );
 };

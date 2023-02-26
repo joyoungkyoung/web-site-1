@@ -20,3 +20,8 @@
   -o-user-drag: none;
   user-drag: none;
 }
+
+@mixin textStroke($color, $strokeColor) {
+  color: $color;
+  text-shadow: -1px -1px 0 $strokeColor, 1px -1px 0 $strokeColor, -1px 1px 0 $strokeColor, 1px 1px 0 $strokeColor;
+}

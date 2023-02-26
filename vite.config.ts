@@ -9,6 +9,7 @@ export default defineConfig({
       '@Assets': '/src/Assets',
       '@Pages': '/src/Pages',
       '@Components': '/src/Components',
+      '@Utils': '/src/Utils',
       '@Hooks': '/src/Hooks',
     },
   },
@@ -25,6 +26,6 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3000,
+    port: 3001,
   },
 });

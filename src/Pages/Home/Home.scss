@@ -226,4 +226,165 @@
       }
     }
   }
+
+  .text-service {
+    margin-top: 180px;
+    margin-bottom: 400px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 400px;
+    strong {
+      position: absolute;
+      @include fontStyle(140px, 400);
+      @include spacingHeight(0px, 160px);
+      white-space: nowrap;
+    }
+    .text1 {
+      left: 0;
+      top: 0;
+      opacity: 0.1;
+      color: $text-color;
+    }
+    .text2 {
+      left: -300px;
+      top: 160px;
+      opacity: 0.3;
+      color: transparent;
+      -webkit-text-stroke: 1px $text-color;
+    }
+  }
+
+  .brand {
+    position: relative;
+    width: $wrap-width;
+    margin: 0 auto;
+    .title-wrapper {
+      margin: 0 10%;
+      .brand-top {
+        margin-bottom: 20px;
+        @include fontStyle(16px, 700px);
+        @include spacingHeight(4px, 30px);
+      }
+      .brand-text {
+        display: flex;
+        .title {
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+          @include fontStyle(70px, 700);
+          @include spacingHeight(-3px, 80px);
+          word-wrap: normal;
+          word-break: keep-all;
+        }
+        .desc {
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+          padding: 10px 0;
+          @include fontStyle(18px, 400);
+          @include spacingHeight(-1px, 30px);
+          word-wrap: normal;
+          word-break: keep-all;
+        }
+      }
+    }
+    .brand-carousel {
+      margin-top: 110px;
+      margin-left: -10%;
+      width: 120%;
+      .carousel-stage-outer {
+        position: relative;
+        overflow: hidden;
+        transition: 0.2s ease;
+        .carousel-stage {
+          display: flex;
+          transition: all 0.5s ease 0s;
+          .carousel-item {
+            position: relative;
+            display: flex;
+            justify-content: center;
+
+            .image {
+              display: flex;
+              justify-content: center;
+              width: 66.6666%;
+              transition: all 0.5s;
+              // transition: all 1s ease-in-out;
+              background-size: cover;
+              background-position: top;
+              &.expand {
+                width: 100%;
+              }
+            }
+          }
+
+          &.grap {
+            cursor: grab;
+          }
+        }
+        .text-stroke {
+          position: absolute;
+          left: -340px;
+          top: 270px;
+          @include fontStyle(200px, 700);
+          color: transparent;
+          -webkit-text-stroke: 1px #ffffff;
+          opacity: 0.3;
+          transform: rotateZ(90deg);
+        }
+      }
+    }
+    .brand-switch {
+      margin-top: 110px;
+      height: 370px;
+      position: absolute;
+      width: 250px;
+      right: 0;
+      top: 50%;
+      .switchs {
+        .switch {
+          display: flex;
+          height: 35px;
+          cursor: pointer;
+          opacity: 0.3;
+          justify-content: flex-end;
+          &.active {
+            opacity: 1;
+            i {
+              &::before {
+                left: 14px;
+                width: 20px;
+                background-color: #ffffff;
+              }
+            }
+            span {
+              @include fontStyle(17px, 700);
+              color: #ffffff;
+            }
+          }
+          i {
+            position: relative;
+            width: 35px;
+            &::before {
+              content: '';
+              position: absolute;
+              top: 11.5px;
+              left: 24px;
+              width: 10px;
+              height: 3px;
+              background-color: #ffffff;
+              transition: 0.2s;
+            }
+          }
+          span {
+            letter-spacing: 1px;
+            @include fontStyle(17px, 700);
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
 }

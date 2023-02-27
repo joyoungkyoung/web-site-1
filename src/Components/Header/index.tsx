@@ -8,11 +8,16 @@ import './Header.scss';
 const Header = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
+  const goBottomRef = useRef<HTMLDivElement>(null);
+
   const { y: scrollY } = useWindowScroll();
 
   useEffect(() => {
     if (scrollY > 0) headerRef.current?.classList.add('on');
     else headerRef.current?.classList.remove('on');
+
+    if (scrollY > 100) goBottomRef.current?.classList.add('on');
+    else goBottomRef.current?.classList.remove('on');
   }, [scrollY]);
 
   const handleClickDrawerMenu = () => {
@@ -20,6 +25,12 @@ const Header = () => {
     drawerRef.current?.classList.toggle('off');
 
     headerRef.current?.classList.toggle('open');
+  };
+
+  const handleGoBottom = () => {
+    // const home = document.getElementById('home-container'); // home?.scrollHeight
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -36,6 +47,10 @@ const Header = () => {
         <div ref={drawerRef} className="drawer-menu off" onClick={handleClickDrawerMenu}>
           <i />
         </div>
+      </div>
+
+      <div ref={goBottomRef} className="go-bottom" onClick={handleGoBottom}>
+        <i />
       </div>
     </div>
   );

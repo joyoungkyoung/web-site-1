@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useWindowScroll } from 'react-use';
 import RoutesString from 'src/Utils/RoutesString';
 import { MENUS } from './Header.data';
@@ -9,6 +9,7 @@ const Header = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
   const goBottomRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const { y: scrollY } = useWindowScroll();
 
@@ -25,6 +26,8 @@ const Header = () => {
     drawerRef.current?.classList.toggle('off');
 
     headerRef.current?.classList.toggle('open');
+    menuRef.current?.classList.toggle('hide');
+    goBottomRef.current?.classList.toggle('hide');
   };
 
   const handleGoBottom = () => {
@@ -39,11 +42,14 @@ const Header = () => {
         <div />
       </Link>
       <div className="menu-wrapper">
-        {MENUS.map((item) => (
-          <Link key={item.id} to={item.path} className="menu">
-            {item.text}
-          </Link>
-        ))}
+        <div ref={menuRef} className="menu">
+          {MENUS.map((item) => (
+            <Link key={item.id} to={item.path}>
+              {item.text}
+            </Link>
+          ))}
+        </div>
+
         <div ref={drawerRef} className="drawer-menu off" onClick={handleClickDrawerMenu}>
           <i />
         </div>
@@ -51,6 +57,33 @@ const Header = () => {
 
       <div ref={goBottomRef} className="go-bottom" onClick={handleGoBottom}>
         <i />
+      </div>
+
+      <div className="menu-detail">
+        <div className="menu-detail-wrapper">
+          <div className="typography">
+            <Link to={RoutesString.Company} onClick={handleClickDrawerMenu}>
+              <span>COMPANY</span>
+            </Link>
+            <Link to={RoutesString.Recruit}>
+              <span>RECRUIT</span>
+            </Link>
+            <Link to={RoutesString.Brand}>
+              <span>BRAND</span>
+            </Link>
+            <Link to={RoutesString.Shop}>
+              <span>SHOP</span>
+            </Link>
+            <Link to={RoutesString.Contact}>
+              <span>CONTACT</span>
+            </Link>
+          </div>
+          <div className="desc">
+            <span>NO.1</span>
+            <span>패션 라이프 스타일 편집숍</span>
+            <strong>원더플레이스</strong>
+          </div>
+        </div>
       </div>
     </div>
   );

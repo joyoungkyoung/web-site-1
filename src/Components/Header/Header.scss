@@ -13,7 +13,10 @@
   &.open {
     width: 100%;
     height: 100%;
-    background-color: beige;
+
+    .menu-detail {
+      display: flex;
+    }
   }
   &.on {
     .logo {
@@ -49,28 +52,35 @@
     transition: 0.3s;
     .menu {
       display: flex;
-      position: relative;
+      column-gap: 50px;
       color: $text-color;
       align-items: center;
-      text-decoration: none;
-      @include fontStyle(18px, 600);
-      &:hover {
+
+      > a {
+        position: relative;
+        text-decoration: none;
+        @include fontStyle(18px, 600);
+        &:hover {
+          &::before {
+            right: 0;
+            background-color: $text-color;
+            pointer-events: unset;
+          }
+        }
         &::before {
-          right: 0;
-          background-color: $text-color;
-          pointer-events: unset;
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 100%;
+          top: 40px;
+          height: 3px;
+          background: transparent;
+          pointer-events: none;
+          transition: 0.4s;
         }
       }
-      &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 100%;
-        top: 40px;
-        height: 3px;
-        background: transparent;
-        pointer-events: none;
-        transition: 0.4s;
+      &.hide {
+        display: none;
       }
     }
     .drawer-menu {
@@ -144,6 +154,9 @@
     &.on {
       opacity: 1;
     }
+    &.hide {
+      display: none;
+    }
     > i {
       position: absolute;
       left: 50%;
@@ -156,6 +169,63 @@
       border-right: #fff solid 1px;
       transform: rotate(-45deg);
       pointer-events: none;
+    }
+  }
+
+  //
+  .menu-detail {
+    position: relative;
+    display: none;
+    width: 100%;
+    .menu-detail-wrapper {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      left: 17%;
+      right: unset;
+      top: 50%;
+      width: 67%;
+      margin-top: -300px;
+      .typography {
+        display: flex;
+        flex-direction: column;
+        > a {
+          @include fontStyle(80px, 700);
+          @include spacingHeight(0px, 120px);
+          text-decoration: none;
+          color: transparent;
+          -webkit-text-stroke: 1px $text-color;
+          > span {
+            position: relative;
+            &:hover {
+              color: $text-color;
+              &::after {
+                width: 30px;
+              }
+            }
+            &::after {
+              content: '';
+              position: absolute;
+              left: calc(100% + 15px);
+              top: 55px;
+              width: 0px;
+              height: 12px;
+              background-color: $text-color;
+              transition: width 0.3s;
+            }
+          }
+        }
+      }
+      .desc {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        @include fontStyle(24px, 100);
+        @include spacingHeight(-1px, 40px);
+        > strong {
+          font-weight: 700;
+        }
+      }
     }
   }
 }

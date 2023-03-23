@@ -1,0 +1,458 @@
+.company-container {
+  @include defaultContentMargin;
+  > section {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .cs-top {
+    position: relative;
+    padding-top: 120px;
+    padding-bottom: 90px;
+    text-align: center;
+    height: 500px;
+    &.company {
+      &::before {
+        content: 'COMPANY';
+        position: absolute;
+        right: 0;
+        bottom: -10%;
+        @include fontStyle(14.5833vw, 700);
+        color: #f8f8f8;
+        @include spacingHeight(-1vw, 14.5833vw);
+        z-index: -1;
+      }
+    }
+
+    .wrap {
+      .title {
+        @include fontStyle(70px, 700);
+        @include spacingHeight(-3px, 80px);
+      }
+      .text {
+        margin-top: 40px;
+        min-height: 90px;
+        @include fontStyle(18px, 300);
+        @include spacingHeight(-0.5px, 30px);
+      }
+    }
+  }
+
+  .cs-about {
+    .wrap {
+      .cs-content {
+        .csa-text {
+          box-sizing: border-box;
+          float: left;
+          width: 50%;
+          padding-right: 50px;
+          > ul {
+            border-top: #eeeeee solid 1px;
+            > li {
+              display: flex;
+              align-items: center;
+              height: 70px;
+              border-bottom: #eeeeee solid 1px;
+              strong {
+                width: 130px;
+                border-right: #eeeeee solid 1px;
+                @include fontStyle(15px, 600);
+                @include spacingHeight(-1px, 16px);
+                word-break: keep-all;
+              }
+              span {
+                padding-left: 30px;
+                @include fontStyle(15px, 400);
+                @include spacingHeight(-1px, 20px);
+                word-break: keep-all;
+              }
+            }
+          }
+        }
+        .csa-pic {
+          float: left;
+          width: 50%;
+          > img {
+            float: left;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .cs-history {
+    .wrap {
+      .cs-content {
+        .csh-item {
+          .cshi-list {
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            &::before {
+              content: '';
+              display: inline-block;
+              vertical-align: middle;
+              position: absolute;
+              left: 10px;
+              top: 15px;
+              bottom: 45px;
+              width: 1px;
+              height: auto;
+              background-color: #f5f5f5;
+            }
+            dl {
+              display: inline-block;
+              vertical-align: middle;
+              box-sizing: border-box;
+              position: relative;
+              width: 100%;
+              margin-bottom: 40px;
+              padding-left: 160px;
+              &:first-child {
+                &::after {
+                  left: 6px;
+                  top: 18px;
+                  width: 8px;
+                  height: 8px;
+                  background-color: #fff;
+                }
+                &::before {
+                  content: '';
+                  display: inline-block;
+                  vertical-align: middle;
+                  position: absolute;
+                  left: 0;
+                  top: 12px;
+                  width: 20px;
+                  height: 20px;
+                  background-color: #000;
+                  border-radius: 50%;
+                }
+              }
+              &::after {
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+                position: absolute;
+                left: 5px;
+                top: 15px;
+                width: 10px;
+                height: 10px;
+                background-color: #000;
+                border-radius: 50%;
+              }
+              > dt {
+                display: inline-block;
+                vertical-align: middle;
+                float: left;
+                width: 100%;
+                margin-bottom: 10px;
+                font-size: 30px;
+                font-weight: 700;
+                color: #131313;
+                line-height: 40px;
+                letter-spacing: -1px;
+                word-break: keep-all;
+              }
+              > dd {
+                display: inline-block;
+                vertical-align: middle;
+                float: left;
+                width: 100%;
+                font-size: 18px;
+                font-weight: 300;
+                color: #131313;
+                line-height: 30px;
+                letter-spacing: -1px;
+                word-break: keep-all;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cs-vision {
+    .wrap {
+      .cs-content {
+        .scv-text {
+          display: inline-block;
+          vertical-align: middle;
+          box-sizing: border-box;
+          width: 100%;
+          padding: 170px 80px;
+          padding-bottom: 70px;
+          background-image: url('@Assets/Images/Company/pic_vision01.jpeg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          text-align: left;
+          span {
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
+            @include fontStyle(30px, 100);
+            @include spacingHeight(0.5px, 50px);
+            color: #fff;
+            word-break: keep-all;
+          }
+        }
+      }
+    }
+  }
+
+  .cs-business {
+    .wrap {
+      .cs-content {
+        .csb-list {
+          display: flex;
+          flex-wrap: wrap;
+          vertical-align: middle;
+          width: 100%;
+          gap: 20px;
+          li {
+            display: flex;
+            vertical-align: middle;
+            position: relative;
+            overflow: hidden;
+            width: calc(50% - 10px);
+            height: 300px;
+            text-align: center;
+            &:hover {
+              .csbl-box {
+                .csbl-pop {
+                  opacity: 0;
+                  transition: 0;
+                }
+                i {
+                  opacity: 0;
+                }
+                .csbl-wrap {
+                  top: 0;
+                  background-color: rgba(0, 0, 0, 0.6);
+                  opacity: 1;
+                }
+              }
+            }
+            i {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              width: 56px;
+              height: 56px;
+              margin-left: -30px;
+              margin-top: -30px;
+              border: #fff solid 2px;
+              border-radius: 50%;
+              opacity: 0.5;
+              transition: 0.3s;
+              &::before {
+                content: '';
+                position: absolute;
+                left: 16px;
+                right: 16px;
+                top: 50%;
+                height: 2px;
+                margin-top: -1px;
+                background-color: #fff;
+              }
+              &::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 16px;
+                bottom: 16px;
+                width: 2px;
+                margin-left: -1px;
+                background-color: #fff;
+              }
+            }
+            .csbl-box {
+              display: inline-block;
+              vertical-align: middle;
+              position: relative;
+              box-sizing: border-box;
+              width: 100%;
+              min-height: 300px;
+              text-align: left;
+              > img {
+                width: 100%;
+                object-fit: cover;
+              }
+              .csbl-pop {
+                position: absolute;
+                left: 40px;
+                bottom: 30px;
+                @include fontStyle(24px, 800);
+                @include spacingHeight(-0.5px, 40px);
+                color: #fff;
+                transition: 0.3s;
+              }
+              .csbl-wrap {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 100%;
+                bottom: 0;
+                padding: 60px 40px;
+                padding-bottom: 30px;
+                transition: 0.5s;
+                opacity: 0;
+
+                .csbl-title {
+                  display: inline-block;
+                  vertical-align: middle;
+                  width: 100%;
+                  @include fontStyle(24px, 800);
+                  @include spacingHeight(-0.5px, 40px);
+                  color: #fff;
+                }
+                .csbl-text {
+                  display: inline-block;
+                  vertical-align: middle;
+                  width: 100%;
+                  margin-top: 20px;
+                  @include fontStyle(15px, 200);
+                  @include spacingHeight(-0.5px, 30px);
+                  color: #fff;
+                  span {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 100%;
+                    word-break: keep-all;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cs-post {
+    .wrap + .wrap {
+      margin-top: 80px;
+    }
+    .cs-board {
+      .typeList {
+        table {
+          border-top: #131313 solid 1px;
+          border-bottom: none;
+        }
+        thead {
+          th {
+            background-color: #f4f4f4;
+            font-size: 14px !important;
+            font-weight: 400;
+            color: #131313 !important;
+            text-align: center;
+            line-height: 30px;
+            &:first-child {
+              border-left: 0;
+            }
+          }
+        }
+        tbody {
+          tr {
+            background-color: #f8f8f8 !important;
+            border-bottom: #eee solid 1px;
+          }
+          td {
+            overflow: hidden;
+            padding: 18px 0 !important;
+            border: 0;
+            @include fontStyle(14px, 400);
+            @include spacingHeight(-0.5px, 23px);
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-align: center;
+            &.subject {
+              padding-left: 30px !important;
+              padding-right: 30px !important;
+              img {
+                margin: -4px 5px 0 0;
+                pointer-events: none;
+              }
+            }
+            a {
+              @include fontStyle(16px, 400);
+              @include spacingHeight(-0.5px, 23px);
+            }
+            .text-num {
+              @include fontStyle(14px, 400);
+              @include spacingHeight(-0.5px, 20px);
+              color: #888;
+            }
+          }
+        }
+      }
+      .gLine {
+        border-width: 0;
+        border-bottom-width: 1px;
+      }
+    }
+  }
+
+  //   ---------
+  .cs-area {
+    padding: 160px 0;
+  }
+
+  .cs-gray {
+    background-color: #f8f8f8;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 1280px;
+    text-align: left;
+    display: flow-root;
+    .cs-title {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      float: left;
+      width: 25%;
+      @include fontStyle(30px, 700);
+      @include spacingHeight(5px, 40px);
+      color: #000000;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -14px;
+        width: 22px;
+        height: 4px;
+        background-color: #000;
+      }
+    }
+
+    .cs-content {
+      display: inline-block;
+      vertical-align: middle;
+      float: left;
+      width: 75%;
+      .text {
+        margin-top: 0px;
+        margin-bottom: 80px;
+        @include fontStyle(24px, 400);
+        @include spacingHeight(-1px, 40px);
+        word-wrap: normal;
+        word-break: keep-all;
+      }
+    }
+  }
+
+  .btn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
